@@ -11,6 +11,7 @@ base_packages:
       - zsh
       - nautilus-dropbox
       - tree
+      - autojump
 
 base_to_purge:
   pkg.purged:
