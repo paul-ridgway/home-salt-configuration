@@ -13,6 +13,7 @@ base_packages:
       - tree
       - terminator
       - axel
+      - autojump
 
 # Trying to force myself to learn vim!
 base_to_purge:
