@@ -4,3 +4,5 @@ base:
    - google-chrome
    - chrome-gnome-shell
    - spotify
+   - sublime-text
+   - jetbrains-toolbox

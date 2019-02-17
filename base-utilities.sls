@@ -11,7 +11,10 @@ base_packages:
       - zsh
       - nautilus-dropbox
       - tree
+      - terminator
+      - axel
 
+# Trying to force myself to learn vim!
 base_to_purge:
   pkg.purged:
     - pkgs:
