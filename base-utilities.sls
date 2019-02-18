@@ -14,6 +14,18 @@ base_packages:
       - terminator
       - axel
       - autojump
+      - smbclient
+      - exfat-fuse
+      - exfat-utils
+      - vlc
+      - audacity
+      - kdenlive
+      - libheif1
+      - gimp
+      - ufraw
+      - ufraw-batch
+      - gnome-tweak-tool
+      - python-pip
 
 # Trying to force myself to learn vim!
 base_to_purge:

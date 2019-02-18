@@ -6,3 +6,4 @@ base:
    - spotify
    - sublime-text
    - jetbrains-toolbox
+   - mongodb
