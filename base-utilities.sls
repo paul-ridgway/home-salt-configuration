@@ -26,6 +26,10 @@ base_packages:
       - ufraw-batch
       - gnome-tweak-tool
       - python-pip
+      - iotop
+      - net-tools
+      - openssh-server
+      - libreoffice
 
 # Trying to force myself to learn vim!
 base_to_purge:
