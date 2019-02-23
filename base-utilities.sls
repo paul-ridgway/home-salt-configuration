@@ -30,6 +30,8 @@ base_packages:
       - net-tools
       - openssh-server
       - libreoffice
+      - maven
+      - openjdk-8-jdk
 
 # Trying to force myself to learn vim!
 base_to_purge:
