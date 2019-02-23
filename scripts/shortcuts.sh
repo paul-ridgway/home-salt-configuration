@@ -11,6 +11,7 @@ CONFIG[org.gnome.desktop.wm.keybindings begin-move]="[]"
 CONFIG[org.gnome.shell.keybindings toggle-message-tray]="[]"
 CONFIG[org.gnome.settings-daemon.plugins.media-keys home]="<Super>e"
 CONFIG[org.gnome.settings-daemon.plugins.media-keys terminal]="<Super>t"
+CONFIG[org.gnome.settings-daemon.plugins.media-keys www]="<Super>w"
 
 COUNTER=0
 CHANGED=no
