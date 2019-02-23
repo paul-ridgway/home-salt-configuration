@@ -7,3 +7,4 @@ base:
    - sublime-text
    - jetbrains-toolbox
    - mongodb
+   - franz
