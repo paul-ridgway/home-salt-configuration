@@ -1,5 +1,4 @@
 #!/bin/bash
-set -x
 set -e
 
 RUID=paul
@@ -13,6 +12,8 @@ CONFIG[org.gnome.settings-daemon.plugins.media-keys home]="<Super>e"
 CONFIG[org.gnome.settings-daemon.plugins.media-keys terminal]="<Super>t"
 CONFIG[org.gnome.settings-daemon.plugins.media-keys www]="<Super>w"
 
+echo "User: $RUID / $RUSER_UID"
+
 COUNTER=0
 CHANGED=no
 for K in "${!CONFIG[@]}"; do 
@@ -21,6 +22,8 @@ for K in "${!CONFIG[@]}"; do
 	X=$(gsettings get $K | sed 's/@as //g' | sed s/\'//g)
 	if [ "$X" != "$V" ]; then
 		echo "Key needs to changing from $X to $V"
+		# Reset clears any bad bindings before (if done from another user)
+		sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings reset $K $V
 		sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set $K $V
 		COUNTER=$[$COUNTER +1]
 		CHANGED=yes
