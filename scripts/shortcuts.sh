@@ -1,17 +1,9 @@
 #!/bin/bash
+set -x
 set -e
 
-TARGET_USER=paul
-CURRENT_USER=$(whoami)
-
-echo "Current User: $CURRENT_USER"
-
-if [ "$CURRENT_USER" != "$TARGET_USER" ]; then
-	echo "Changing user to $TARGET_USER"
-	SRC="$( dirname "${BASH_SOURCE[0]}" )$(basename "$0")"
-	chmod 777 $SRC
-	exec su -l -c $SRC $TARGET_USER
-fi
+RUID=paul
+RUSER_UID=$(id -u ${RUID})
 
 declare -A CONFIG
 CONFIG[org.gnome.desktop.wm.keybindings begin-resize]="[]"
@@ -19,6 +11,7 @@ CONFIG[org.gnome.desktop.wm.keybindings begin-move]="[]"
 CONFIG[org.gnome.shell.keybindings toggle-message-tray]="[]"
 CONFIG[org.gnome.settings-daemon.plugins.media-keys home]="<Super>e"
 CONFIG[org.gnome.settings-daemon.plugins.media-keys terminal]="<Super>t"
+CONFIG[org.gnome.settings-daemon.plugins.media-keys www]="<Super>w"
 
 COUNTER=0
 CHANGED=no
@@ -28,7 +21,7 @@ for K in "${!CONFIG[@]}"; do
 	X=$(gsettings get $K | sed 's/@as //g' | sed s/\'//g)
 	if [ "$X" != "$V" ]; then
 		echo "Key needs to changing from $X to $V"
-		gsettings set $K $V
+		sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set $K $V
 		COUNTER=$[$COUNTER +1]
 		CHANGED=yes
 	fi
@@ -36,5 +29,5 @@ done
 
 # writing the state line
 echo  # an empty line here so the next line will be the last.
-echo "changed=$CHANGED comment='Updated $COUNTER shortcuts'"
+echo "changed=$CHANGED comment='Updated $COUNTER shortcuts' user='$CURRENT_USER'"
 exit 0
