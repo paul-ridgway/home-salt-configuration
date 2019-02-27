@@ -8,3 +8,4 @@ base:
    - jetbrains-toolbox
    - mongodb
    - franz
+   - gnome-settings

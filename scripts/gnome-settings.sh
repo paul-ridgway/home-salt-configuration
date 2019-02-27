@@ -11,6 +11,7 @@ CONFIG[org.gnome.shell.keybindings toggle-message-tray]="[]"
 CONFIG[org.gnome.settings-daemon.plugins.media-keys home]="<Super>e"
 CONFIG[org.gnome.settings-daemon.plugins.media-keys terminal]="<Super>t"
 CONFIG[org.gnome.settings-daemon.plugins.media-keys www]="<Super>w"
+CONFIG[org.gnome.desktop.background show-desktop-icons]="false"
 
 echo "User: $RUID / $RUSER_UID"
 
@@ -23,7 +24,7 @@ for K in "${!CONFIG[@]}"; do
 	if [ "$X" != "$V" ]; then
 		echo "Key needs to changing from $X to $V"
 		# Reset clears any bad bindings before (if done from another user)
-		sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings reset $K $V
+		sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings reset $K
 		sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set $K $V
 		COUNTER=$[$COUNTER +1]
 		CHANGED=yes
