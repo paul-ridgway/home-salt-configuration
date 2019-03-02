@@ -32,9 +32,11 @@ base_packages:
       - libreoffice
       - maven
       - openjdk-8-jdk
+      - lightdm
 
 # Trying to force myself to learn vim!
 base_to_purge:
   pkg.purged:
     - pkgs:
       - nano
+      - indicator-common
