@@ -9,3 +9,16 @@ base:
    - mongodb
    - franz
    - gnome-settings
+   - gnome-extensions.caffeine
+   - gnome-extensions.cpu-power-manager
+   - gnome-extensions.dash-to-panel
+   - gnome-extensions.dynamic-panel-transparency
+   - gnome-extensions.extensions
+   - gnome-extensions.hide-activities-button
+   - gnome-extensions.move-clock
+   - gnome-extensions.refresh-wifi-connections
+   - gnome-extensions.remove-dropdown-arrows
+   - gnome-extensions.sensory-perception
+   - gnome-extensions.status-area-horizontal-spacing
+   - gnome-extensions.steal-my-focus
+   - gnome-extensions.user-themes

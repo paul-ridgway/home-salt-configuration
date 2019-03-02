@@ -11,6 +11,9 @@
    #                                                               #
    #################################################################
 
+DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/$(id -u)/bus"
+echo "DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS"
+
 usage_guide() {
   cat << EOF
 Usage: $SCRIPT_NAME EXTENSION_ID [EXTENSION_ID...] [GNOME_VERSION] [OPTIONS]
