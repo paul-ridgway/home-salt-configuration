@@ -33,6 +33,8 @@ base_packages:
       - maven
       - openjdk-8-jdk
       - lightdm
+      - ufraw
+      - ufraw-batch
 
 # Trying to force myself to learn vim!
 base_to_purge:
