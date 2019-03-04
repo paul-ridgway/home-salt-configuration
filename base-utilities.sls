@@ -35,6 +35,7 @@ base_packages:
       - lightdm
       - ufraw
       - ufraw-batch
+      - parallel
 
 # Trying to force myself to learn vim!
 base_to_purge:
