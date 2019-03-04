@@ -1,0 +1,12 @@
+[/]
+enable-text-color=false
+enable-opacity=true
+remove-panel-styling=false
+transition-windows-touch=true
+transition-with-overview=true
+maximized-opacity=255
+hide-corners=true
+text-shadow-position=(0, 3, 5)
+transition-speed=100
+icon-shadow-position=(0, 2, 5)
+unmaximized-opacity=204

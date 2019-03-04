@@ -1,0 +1,4 @@
+[/]
+taskbar-freq-unit-ghz=true
+show-freq-in-taskbar=true
+profiles=[(0, 10, false, 'Energy Saver', '3708318728'), (0, 30, false, 'Quiet', '2614287944'), (20, 80, true, 'Multimedia', '1761579267'), (50, 100, true, 'High Performance', '1479146477')]
