@@ -36,6 +36,7 @@ base_packages:
       - ufraw
       - ufraw-batch
       - parallel
+      - lm-sensors
 
 # Trying to force myself to learn vim!
 base_to_purge:

@@ -12,6 +12,53 @@ CONFIG[org.gnome.settings-daemon.plugins.media-keys home]="<Super>e"
 CONFIG[org.gnome.settings-daemon.plugins.media-keys terminal]="<Super>t"
 CONFIG[org.gnome.settings-daemon.plugins.media-keys www]="<Super>w"
 CONFIG[org.gnome.desktop.background show-desktop-icons]="false"
+CONFIG[org.gnome.desktop.wm.preferences mouse-button-modifier]="[]"
+CONFIG[org.gnome.mutter overlay-key]="Super_R"
+
+TODO: ADD THESE
+290c290
+< org.gnome.ControlCenter last-panel 'display'
+---
+> org.gnome.ControlCenter last-panel 'color'
+845c845
+< org.gnome.mutter overlay-key 'Super_L'
+---
+> org.gnome.mutter overlay-key 'Super_R'
+865c865
+< org.gnome.desktop.calendar show-weekdate false
+---
+> org.gnome.desktop.calendar show-weekdate true
+895c895
+< org.gnome.desktop.interface clock-show-seconds false
+---
+> org.gnome.desktop.interface clock-show-seconds true
+899c899
+< org.gnome.desktop.interface enable-animations true
+---
+> org.gnome.desktop.interface enable-animations false
+904c904
+< org.gnome.desktop.interface icon-theme 'Yaru'
+---
+> org.gnome.desktop.interface icon-theme 'Numix-Circle'
+916c916
+< org.gnome.desktop.interface gtk-theme 'Yaru'
+---
+> org.gnome.desktop.interface gtk-theme 'Numix'
+921c921
+< org.gnome.desktop.interface show-battery-percentage false
+---
+> org.gnome.desktop.interface show-battery-percentage true
+924c924
+< org.gnome.desktop.interface clock-show-date false
+---
+> org.gnome.desktop.interface clock-show-date true
+1008c1008
+< org.gtk.Settings.FileChooser window-position (334, 81)
+---
+> org.gtk.Settings.FileChooser window-position (2254, 75)
+
+
+
 
 echo "User: $RUID / $RUSER_UID"
 
